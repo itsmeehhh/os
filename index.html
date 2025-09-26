@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Chat</title>
+    <style>
+        body { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+        video { width: 80%; border: 1px solid #ccc; }
+        button { margin: 10px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Video Chat</h1>
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+    <button id="startButton">Start Chat</button>
+    <button id="hangUpButton" disabled>Hang Up</button>
+
+    <script>
+        // JavaScript for video chat functionality will go here
+        const startButton = document.getElementById('startButton');
+        const hangUpButton = document.getElementById('hangUpButton');
+        const localVideo = document.getElementById('localVideo');
+        const remoteVideo = document.getElementById('remoteVideo');
+
+        startButton.onclick = startChat;
+        hangUpButton.onclick = hangUp;
+
+        function startChat() {
+            // Code to start chat
+            console.log("Chat started");
+            startButton.disabled = true;
+            hangUpButton.disabled = false;
+        }
+
+        function hangUp() {
+            // Code to end chat
+            console.log("Chat ended");
+            startButton.disabled = false;
+            hangUpButton.disabled = true;
+        }
+    </script>
+</body>
+</html>
